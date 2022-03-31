@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-import {v4 as uuidv4} from 'uuid'
+import { v4 as uuidv4 } from "uuid";
 
 import Header from "./components/Header";
 import FeedbackList from "./components/FeedbackList";
@@ -21,12 +21,12 @@ function App() {
 
 	const addFeedback = (feedback, rating) => {
 		setFeedback((prev) => [
-			...prev,
 			{
 				id: uuidv4(),
 				rating,
 				text: feedback,
-			}, 
+			},
+			...prev,
 		]);
 	};
 
