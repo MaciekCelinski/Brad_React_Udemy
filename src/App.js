@@ -1,5 +1,7 @@
 import { useState } from "react";
 
+import {v4 as uuidv4} from 'uuid'
+
 import Header from "./components/Header";
 import FeedbackList from "./components/FeedbackList";
 import FeedbackData from "./data/FeedbackData";
@@ -17,14 +19,14 @@ function App() {
 		}
 	};
 
-	const addFeedback = (feedback) => {
+	const addFeedback = (feedback, rating) => {
 		setFeedback((prev) => [
 			...prev,
 			{
-				id: Math.floor(Math.random() * 1000000),
-				rating: 7,
+				id: uuidv4(),
+				rating,
 				text: feedback,
-			},
+			}, 
 		]);
 	};
 
