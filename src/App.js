@@ -59,7 +59,7 @@ function App() {
 					></Route>
 					{/* routing */}
 					<Route path="/about" element={<About />} />
-					<Route path='/post/:id/:name' element={<Post />} />
+					<Route path='/post/*' element={<Post />} />
 				</Routes>
 			</div>
 		</Router>

@@ -1,11 +1,24 @@
-import { useParams } from "react-router-dom";
+import { Navigate, useNavigate, Routes, Route } from "react-router-dom";
 
 const Post = () => {
-    const params = useParams()
+
+	const status = 200;
+	if (status === 404) <Navigate to="/not-found" />;
+
+	const navigate = useNavigate();
+    
+	const ClickHandler = () => {
+		console.log("Hello");
+		navigate("/about", {state:{id:1,name:'sabaoon'}});
+	};
+
 	return (
 		<div>
-			<h1>Post : {params.id}</h1>
-            <h2>Name : {params.name}</h2>
+			<h1>Post</h1>
+			<button onClick={ClickHandler}>Click</button>
+            <Routes>
+                <Route path="/show" element={<h1>123</h1>}/>
+            </Routes>
 		</div>
 	);
 };

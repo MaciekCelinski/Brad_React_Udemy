@@ -1,7 +1,9 @@
 import Card from "../components/shared/Card";
 import { Link } from "react-router-dom";
-
+import { useLocation } from "react-router-dom";
 const About = () => {
+	const location = useLocation();
+	console.log("location: ", location);
 	return (
 		<>
 			<Card>
